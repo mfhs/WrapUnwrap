@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>unwrap demo</title>
+    <style>
+        .wrap
+        {
+            border: 2px solid blue;
+        }
+        p
+        {
+            background: yellow;
+            margin: 4px;
+        }
+    </style>
+    <script src="jquery-1.9.1.js"></script>
+</head>
+<body>
+    <button>
+        wrap/unwrap</button>
+    <div class="itemList">
+        <p>
+            Hello</p>
+        <p>
+            cruel</p>
+        <p>
+            World</p>
+	</div>
+    <br>
+    <br>
+    <div class="itemList">
+		<p>
+			Hello</p>
+		<p>
+			cruel</p>
+		<p>
+			World</p>
+	</div>
+	
+	
+	<script>
+
+		$("button").click(function () {
+			$('.itemList').each(function (index) {
+				if ($('.wrap', $(this)).length > 0) {
+					$('.wrap > p', $(this)).unwrap();
+				} else {
+					$(this).wrapInner('<div class="wrap"></div>');
+				}
+			});
+		});
+	</script>
+	
+	
+</body>
+</html>
+
+<!-- 
+
+	function setupScrollbars() {
+            setTimeout(function() {
+                //Created an array for adding n iScroll objects
+                var myScroll = new Array();
+                $('.itemList').each(function(index) {
+
+                    $(this).wrapInner('<div></div>');
+
+                    $(this).attr('id', 'itemList_' + index);
+
+                    var id = 'itemList_' + index;
+                    myScroll.push(new iScroll(id, { hideScrollbar: true, hScrollbar: false, vScrollbar: true }));
+                });
+            }, 5000);
+        }
+		window.addEventListener('load', setupScrollbars, false);
+		
+		addWrapperToItemListForiPadNativeScroll: function (controlId) {
+        setTimeout(function () {
+            //Created an array for adding n iScroll objects
+            var myScroll = new Array();
+            $('.itemList', $('#' + controlId)).each(function (index) {
+
+                var id = 'itemList_' + controlId;
+
+                if ($('#' + id, $(this)).length > 0) {
+                    $(this).wrapInner
+                }
+
+                $(this).wrapInner('<div id=itemList_' + controlId + '></div>');
+
+                $(this).attr('id', 'itemList_' + index);
+
+                var id = 'itemList_' + index;
+                myScroll.push(new iScroll(id, { hideScrollbar: true, hScrollbar: false, vScrollbar: true }));
+            });
+        }, 5000);
+    },
+		
+		
+		
+	addWrapperToItemListForiPadNativeScroll: function (controlId) {
+	setTimeout(function () {
+		//Created an array for adding n iScroll objects
+		var myScroll = new Array();
+		
+		$('.itemList', $('#' + controlId)).each(function (index) {
+
+			var id = 'itemList_' + controlId;
+			var $wrapper = $('#' + id, $(this));
+			if ($wrapper.length === 1) {
+				$('div', $wrapper).unwrap();
+			}
+
+			$(this).wrapInner('<div id=' + id + '></div>');
+
+			$(this).attr('id', 'itemList_' + index);
+
+			var id = 'itemList_' + index;
+			myScroll.push(new iScroll(id, { hideScrollbar: true, hScrollbar: false, vScrollbar: true }));
+		});
+	}, 5000);
+    },
+-->
+
+
+
+
+
+
+
+
+
+
